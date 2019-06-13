@@ -1,2 +1,1 @@
-﻿4.10.2018	v1.1.0.0	Pridanie logovania exceptionov, pridané čísla riadkov do logu, zmena názvu log súboru.
-13.6.2019   v2.0.0.0    Prerobenie triedy Logger na kompletne statickú triedu.
+﻿13.6.2019   v2.0.0.0    Refactoring the Logger class to a static one. Logging of long method and class names fixed.
