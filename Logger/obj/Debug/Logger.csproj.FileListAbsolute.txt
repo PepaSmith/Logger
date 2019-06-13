@@ -1,0 +1,20 @@
+C:\Users\Peter\Desktop\Programovanie\C#\DLL Knižnice\Logger\Logger\bin\Debug\Logger.dll
+C:\Users\Peter\Desktop\Programovanie\C#\DLL Knižnice\Logger\Logger\bin\Debug\Logger.pdb
+C:\Users\Peter\Desktop\Programovanie\C#\DLL Knižnice\Logger\Logger\obj\Debug\Logger.dll
+C:\Users\Peter\Desktop\Programovanie\C#\DLL Knižnice\Logger\Logger\obj\Debug\Logger.pdb
+C:\Users\Peter\Desktop\Programovanie\C#\DLL Knižnice\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+D:\Peter\Programovanie\C#\DLL Knižnice\Logger\Logger\bin\Debug\Logger.dll
+D:\Peter\Programovanie\C#\DLL Knižnice\Logger\Logger\bin\Debug\Logger.pdb
+D:\Peter\Programovanie\C#\DLL Knižnice\Logger\Logger\obj\Debug\Logger.dll
+D:\Peter\Programovanie\C#\DLL Knižnice\Logger\Logger\obj\Debug\Logger.pdb
+D:\Peter\Programovanie\C#\DLL Knižnice\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+D:\Projekty\Logger\Logger\bin\Debug\Logger.dll
+D:\Projekty\Logger\Logger\bin\Debug\Logger.pdb
+D:\Projekty\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+D:\Projekty\Logger\Logger\obj\Debug\Logger.dll
+D:\Projekty\Logger\Logger\obj\Debug\Logger.pdb
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\bin\Debug\Logger.dll
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\bin\Debug\Logger.pdb
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.dll
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.pdb
