@@ -8,10 +8,10 @@ namespace AppLogger
 {
     public class Utils
     {
-        private static StackTrace st = null;
-        private static StackFrame sf = null;
-        private static MethodBase mthb = null;
-        private static string threadName, threadId = "";
+        private static StackTrace _st = null;
+        private static StackFrame _sf = null;
+        private static MethodBase _mthb = null;
+        private static string _threadName, _threadId = "";
 
         public static string GetTime()
         {
@@ -30,24 +30,46 @@ namespace AppLogger
 
         public static string GetCurrentThread()
         {
-            threadName = Thread.CurrentThread.Name;
-            threadId = Thread.CurrentThread.ManagedThreadId.ToString();
-            return threadName + "  " + threadId;
+            _threadName = Thread.CurrentThread.Name;
+            _threadId = Thread.CurrentThread.ManagedThreadId.ToString();
+            return _threadName + "  " + _threadId;
         }
 
         public static string GetMethodName()
         {
-            st = new StackTrace();
-            sf = st.GetFrame(3);
+            string methodName;
 
-            return sf.GetMethod().Name.ToString().PadRight(20);
+            _st = new StackTrace();
+            _sf = _st.GetFrame(3);
+
+            if (_sf.GetMethod().Name.ToString().Length > 20)
+            {
+                methodName = _sf.GetMethod().Name.ToString().Substring(0, 20);
+            }
+            else
+            {
+                methodName = _sf.GetMethod().Name.ToString().PadRight(20);
+            }
+            
+            return methodName;
         }
 
         public static string GetClassName()
         {
-            st = new StackTrace();
-            mthb = st.GetFrame(3).GetMethod();
-            return (mthb.ReflectedType.Name + ".cs").PadRight(20);
+            string className;
+            _st = new StackTrace();
+            _mthb = _st.GetFrame(3).GetMethod();
+
+            if (_mthb.ReflectedType.Name.Length > 20)
+            {
+                className = _mthb.ReflectedType.Name.Substring(0, 20);
+            }
+            else
+            {
+                className = _mthb.ReflectedType.Name.PadRight(20);
+            }
+
+            return className;
         }
 
         public static string GetAttributeValue(string node)
