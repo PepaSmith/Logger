@@ -256,6 +256,7 @@ namespace AppLogger
                 _logString.Append(Utils.GetMethodName() + ";");
                 _logString.Append("  ");
                 _logString.Append("Line: " + _callStack.GetFileLineNumber().ToString().PadRight(5) + ";");
+                _logString.Append("  ");
                 _logString.Append(logType.PadRight(9) + ";");
                 _logString.Append("  ");
                 _logString.Append(message);
@@ -292,6 +293,7 @@ namespace AppLogger
                 _logString.Append(methodName.PadRight(20) + ";");
                 _logString.Append("  ");
                 _logString.Append("Line: " + _callStack.GetFileLineNumber().ToString().PadRight(5) + ";");
+                _logString.Append("  ");
                 _logString.Append(logType.PadRight(9) + ";");
                 _logString.Append("  ");
                 _logString.Append(message);
