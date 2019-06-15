@@ -28,11 +28,14 @@ namespace AppLogger
             return DateTime.Now.ToString("HH:mm:ss.fff  dd.MM.yyyy");
         }
 
-        public static string GetCurrentThread()
+        public static string GetCurrentThreadName()
         {
-            _threadName = Thread.CurrentThread.Name;
-            _threadId = Thread.CurrentThread.ManagedThreadId.ToString();
-            return _threadName + "  " + _threadId;
+            return Thread.CurrentThread.Name;
+        }
+
+        public static string GetCurrentThreadID()
+        {
+            return Thread.CurrentThread.ManagedThreadId.ToString();
         }
 
         public static string GetMethodName()

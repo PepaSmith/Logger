@@ -40,7 +40,7 @@ namespace AppLogger
                 Directory.CreateDirectory(_folderPath);
                 using (logFile = new StreamWriter(_file, true))
                 {
-                    _logString.Append(Utils.GetTimeDate());
+                    _logString.Append(Utils.GetTimeDate() + ";");
                     _logString.Append("  ");
                     _logString.Append("======================================== Logging Started! ========================================");
                     logFile.WriteLine(_logString);
@@ -67,6 +67,7 @@ namespace AppLogger
         /// <param name="message"></param>
         /// <param name="className"></param>
         /// <param name="methodName"></param>
+        [Obsolete]
         public static void Info(string message, string className, string methodName)
         {
             if (_logOn)
@@ -93,6 +94,7 @@ namespace AppLogger
         /// <param name="message"></param>
         /// <param name="className"></param>
         /// <param name="methodName"></param>
+        [Obsolete]
         public static void Debug(string message, string className, string methodName)
         {
             if (_logOn)
@@ -119,6 +121,7 @@ namespace AppLogger
         /// <param name="message"></param>
         /// <param name="className"></param>
         /// <param name="methodName"></param>
+        [Obsolete]
         public static void Warning(string message, string className, string methodName)
         {
             if (_logOn)
@@ -145,6 +148,7 @@ namespace AppLogger
         /// <param name="message"></param>
         /// <param name="className"></param>
         /// <param name="methodName"></param>
+        [Obsolete]
         public static void Error(string message, string className, string methodName)
         {
             if (_logOn)
@@ -172,6 +176,7 @@ namespace AppLogger
         /// <param name="message"></param>
         /// <param name="className"></param>
         /// <param name="methodName"></param>
+        [Obsolete]
         public static void Fatal(string message, string className, string methodName)
         {
             if (_logOn)
@@ -196,6 +201,7 @@ namespace AppLogger
         /// Log exception in general
         /// </summary>
         /// <param name="ex"></param>
+        [Obsolete]
         public static void Exception(Exception ex, string className, string methodName)
         {
             if (_logOn)
@@ -213,7 +219,7 @@ namespace AppLogger
             {
                 using (logFile = new StreamWriter(_file, true))
                 {                    
-                    logFile.WriteLine(Utils.GetTimeDate() + "  " + "============================== Closing log file, max number of lines reached! ==============================");
+                    logFile.WriteLine(Utils.GetTimeDate() + ";  " + "============================== Closing log file, max number of lines reached! ==============================");
                 }
                 
                 _linesNum = 0;
@@ -223,7 +229,7 @@ namespace AppLogger
 
                 using (logFile = new StreamWriter(_file, true))
                 {
-                    logFile.WriteLine(Utils.GetTimeDate() + "  " + "=================================== Continue of the: {0} ===================================", _tempStr);
+                    logFile.WriteLine(Utils.GetTimeDate() + ";  " + "=================================== Continue of the: {0} ===================================", _tempStr);
                 }
             }            
         }
@@ -234,28 +240,29 @@ namespace AppLogger
         /// <param name="logType"></param>
         /// <param name="message"></param>
         private static void BuildLog(string logType, string message)
-        {
-            
+        {            
             _callStack = new StackFrame(2, true);
 
             using (logFile = new StreamWriter(_file, true))
             {
-                _logString.Append(Utils.GetTimeDate());
+                _logString.Append(Utils.GetTimeDate() + ";");
                 _logString.Append("  ");
-                _logString.Append(Utils.GetCurrentThread());
+                _logString.Append(Utils.GetCurrentThreadName() + ";");
                 _logString.Append("  ");
-                _logString.Append(Utils.GetClassName());
+                _logString.Append(Utils.GetCurrentThreadID() + ";");
                 _logString.Append("  ");
-                _logString.Append(Utils.GetMethodName());
+                _logString.Append(Utils.GetClassName() + ";");
                 _logString.Append("  ");
-                _logString.Append("Line: " + _callStack.GetFileLineNumber().ToString().PadRight(5));
-                _logString.Append(logType.PadRight(12));                
+                _logString.Append(Utils.GetMethodName() + ";");
+                _logString.Append("  ");
+                _logString.Append("Line: " + _callStack.GetFileLineNumber().ToString().PadRight(5) + ";");
+                _logString.Append(logType.PadRight(9) + ";");
+                _logString.Append("  ");
                 _logString.Append(message);
                 logFile.WriteLine(_logString);
                 _logString = new StringBuilder();
                 _linesNum++;
-            }
-            
+            }            
 
             ManageLogFile();
         }
@@ -267,22 +274,26 @@ namespace AppLogger
         /// <param name="message"></param>
         /// <param name="className"></param>
         /// <param name="methodName"></param>
+        [Obsolete]
         private static void BuildLog(string logType, string message, string className, string methodName)
         {
             _callStack = new StackFrame(2, true);
 
             using (logFile = new StreamWriter(_file, true))
             {
-                _logString.Append(Utils.GetTimeDate());
+                _logString.Append(Utils.GetTimeDate() + ";");
                 _logString.Append("  ");
-                _logString.Append(Utils.GetCurrentThread());
+                _logString.Append(Utils.GetCurrentThreadName() + ";");
                 _logString.Append("  ");
-                _logString.Append(className.PadRight(20));
+                _logString.Append(Utils.GetCurrentThreadID() + ";");
                 _logString.Append("  ");
-                _logString.Append(methodName.PadRight(20));
+                _logString.Append(className.PadRight(20) + ";");
                 _logString.Append("  ");
-                _logString.Append("Line: " + _callStack.GetFileLineNumber().ToString().PadRight(5));
-                _logString.Append(logType.PadRight(12));
+                _logString.Append(methodName.PadRight(20) + ";");
+                _logString.Append("  ");
+                _logString.Append("Line: " + _callStack.GetFileLineNumber().ToString().PadRight(5) + ";");
+                _logString.Append(logType.PadRight(9) + ";");
+                _logString.Append("  ");
                 _logString.Append(message);
                 logFile.WriteLine(_logString);
                 _logString = new StringBuilder();

@@ -1,1 +1,2 @@
 ﻿13.6.2019   v2.0.0.0    Refactoring the Logger class to a static one. Logging of long method and class names fixed.
+15.6.2019   v2.1.0.0	Each entry is followed by a semicolon which will be used as a separator for a LogViewer.
