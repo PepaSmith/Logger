@@ -193,7 +193,14 @@ namespace AppLogger
         {
             if(_logOn)
             {
-                BuildLog(LogLevels.Exception, ex.ToString()); 
+                BuildLog(LogLevels.Exception, ex.Message.ToString());
+
+                var stackTrace = ex.StackTrace.Split('\n');
+
+                foreach (string line in stackTrace)
+                {                    
+                    BuildLog(LogLevels.Exception, line);                    
+                }
             }
         }
 
@@ -206,7 +213,14 @@ namespace AppLogger
         {
             if (_logOn)
             {
-                BuildLog(LogLevels.Exception, ex.ToString(), className, methodName);
+                BuildLog(LogLevels.Exception, ex.Message, className, methodName);
+
+                var stackTrace = ex.StackTrace.Split('\n');
+
+                foreach (string line in stackTrace)
+                {
+                    BuildLog(LogLevels.Exception, line, className, methodName);
+                }
             }
         }
 
