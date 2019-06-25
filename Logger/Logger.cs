@@ -77,6 +77,33 @@ namespace AppLogger
         }
 
         /// <summary>
+        /// Log user activity
+        /// </summary>
+        /// <param name="message"></param>
+        public static void Activity(string message)
+        {
+            if (_logOn)
+            {
+                BuildLog(LogLevels.Info, "ACTIVITY: " + message);
+            }
+        }
+
+        /// <summary>
+        /// Log user activity
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="className"></param>
+        /// <param name="methodName"></param>
+        [Obsolete]
+        public static void Activity(string message, string className, string methodName)
+        {
+            if (_logOn)
+            {
+                BuildLog(LogLevels.Info, "ACTIVITY: " + message, className, methodName);
+            }
+        }
+
+        /// <summary>
         /// Log info for debugging
         /// </summary>
         /// <param name="message"></param>
