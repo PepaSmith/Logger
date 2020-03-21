@@ -17,4 +17,5 @@ D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\bin\Debug\Logger.dl
 D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\bin\Debug\Logger.pdb
 D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.dll
 D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.pdb
-D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.csprojAssemblyReference.cache
+D:\Peter\Programovanie\C#\GitHub\DLL Knižnice\Logger\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache

@@ -8,10 +8,16 @@ namespace AppLogger
 {
     public class Utils
     {
+        #region PrivateFields
+
         private static StackTrace _st = null;
         private static StackFrame _sf = null;
         private static MethodBase _mthb = null;
         private static string _threadName, _threadId = "";
+
+        #endregion
+
+        #region PublicMethods
 
         public static string GetTime()
         {
@@ -82,5 +88,7 @@ namespace AppLogger
             string value = xmlDoc.SelectSingleNode("//Configuration/" + node + "/@value").InnerText;
             return value;
         }
+
+        #endregion
     }
 }
